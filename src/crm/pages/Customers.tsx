@@ -193,7 +193,7 @@ const columns: GridColDef[] = [
     minWidth: 80,
     align: "center",
     headerAlign: "center",
-    valueGetter: (params) => params.row.dob.age,
+    valueGetter: (value, row) => row?.dob?.age || 0,
   },
   {
     field: "gender",
@@ -209,7 +209,8 @@ const columns: GridColDef[] = [
     headerName: "Registered",
     flex: 1,
     minWidth: 120,
-    valueGetter: (params) => formatDate(params.row.registered.date),
+    valueGetter: (value, row) =>
+      row?.registered?.date ? formatDate(row.registered.date) : "",
   },
 ];
 
