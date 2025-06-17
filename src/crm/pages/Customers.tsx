@@ -297,22 +297,48 @@ export default function Customers() {
   return (
     <Box sx={{ width: "100%", maxWidth: { sm: "100%", md: "1700px" } }}>
       {/* Header */}
-      <Typography variant="h4" component="h1" sx={{ mb: 3 }}>
-        Customer Management
-      </Typography>
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        sx={{ mb: 3, display: { xs: "none", sm: "flex" } }}
+      >
+        <Box>
+          <Typography variant="h5" component="h2" sx={{ mb: 1 }}>
+            Customer Management
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Manage and view all your customer data in one place
+          </Typography>
+        </Box>
+        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+          <Typography variant="body2" color="text.secondary">
+            Total: <strong>{totalUsers.toLocaleString()}</strong>
+          </Typography>
+        </Box>
+      </Stack>
 
-      <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
-        Manage and view all your customer data in one place. Search, filter, and
-        analyze customer information.
-      </Typography>
+      {/* Mobile Header */}
+      <Box sx={{ display: { xs: "block", sm: "none" }, mb: 3 }}>
+        <Typography variant="h5" component="h2" sx={{ mb: 1 }}>
+          Customer Management
+        </Typography>
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+          Manage and view all your customer data
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          Total: <strong>{totalUsers.toLocaleString()}</strong>
+        </Typography>
+      </Box>
 
-      {/* Search and Stats */}
-      <Stack direction={{ xs: "column", sm: "row" }} spacing={2} sx={{ mb: 3 }}>
+      {/* Search */}
+      <Box sx={{ mb: 3 }}>
         <TextField
           placeholder="Search customers by name, email, or location..."
           value={searchTerm}
           onChange={handleSearchChange}
-          sx={{ minWidth: { sm: 400 } }}
+          fullWidth
+          sx={{ maxWidth: 500 }}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -321,13 +347,7 @@ export default function Customers() {
             ),
           }}
         />
-
-        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-          <Typography variant="body2" color="text.secondary">
-            Total Customers: <strong>{totalUsers.toLocaleString()}</strong>
-          </Typography>
-        </Box>
-      </Stack>
+      </Box>
 
       {/* Error Alert */}
       {error && (
@@ -337,7 +357,7 @@ export default function Customers() {
       )}
 
       {/* Data Grid */}
-      <Card variant="outlined">
+      <Card variant="outlined" sx={{ mb: 3 }}>
         <CardContent sx={{ p: 0 }}>
           <Box sx={{ height: 700, width: "100%" }}>
             <DataGrid
