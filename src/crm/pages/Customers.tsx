@@ -107,13 +107,8 @@ const FullName: React.FC<{ user: User }> = ({ user }) => {
   return (
     <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
       <UserAvatar user={user} />
-      <Box>
-        <Typography variant="body2" sx={{ fontWeight: 500 }}>
-          {`${user.name.first} ${user.name.last}`}
-        </Typography>
-        <Typography variant="caption" color="text.secondary">
-          {user.login.username}
-        </Typography>
+      <Box sx={{ lineHeight: "20px" }}>
+        {`${user.name.first} ${user.name.last}`}
       </Box>
     </Box>
   );
