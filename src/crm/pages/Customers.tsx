@@ -112,7 +112,7 @@ const FullName: React.FC<{ user: User }> = ({ user }) => {
           {`${user.name.first} ${user.name.last}`}
         </Typography>
         <Typography variant="caption" color="text.secondary">
-          @{user.login.username}
+          {user.login.username}
         </Typography>
       </Box>
     </Box>
