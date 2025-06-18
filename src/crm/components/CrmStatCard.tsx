@@ -84,7 +84,7 @@ export default function CrmStatCard({
           <Typography variant="caption" sx={{ color: "text.secondary" }}>
             {interval}
           </Typography>
-          <Box sx={{ width: "100%", height: 50 }}>
+          <Box sx={{ width: "100%", height: 40 }}>
             <Stack
               direction="row"
               sx={{ justifyContent: "space-between", alignItems: "center" }}
