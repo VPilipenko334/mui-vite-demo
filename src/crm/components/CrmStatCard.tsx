@@ -81,7 +81,10 @@ export default function CrmStatCard({
           direction="column"
           sx={{ justifyContent: "space-between", flexGrow: "1", gap: 1 }}
         >
-          <Stack sx={{ justifyContent: "space-between" }}>
+          <Typography variant="caption" sx={{ color: "text.secondary" }}>
+            {interval}
+          </Typography>
+          <Box sx={{ width: "100%", height: 40 }}>
             <Stack
               direction="row"
               sx={{ justifyContent: "space-between", alignItems: "center" }}
@@ -102,11 +105,6 @@ export default function CrmStatCard({
                 }}
               />
             </Stack>
-            <Typography variant="caption" sx={{ color: "text.secondary" }}>
-              {interval}
-            </Typography>
-          </Stack>
-          <Box sx={{ width: "100%", height: 50 }}>
             <SparkLineChart
               color={chartColor}
               data={data}
