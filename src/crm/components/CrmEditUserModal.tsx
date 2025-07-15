@@ -287,8 +287,8 @@ export default function CrmEditUserModal({
             <Typography variant="subtitle1" sx={{ mb: 2, fontWeight: 600 }}>
               Contact Information
             </Typography>
-            <Grid2 container spacing={2}>
-              <Grid2 xs={12} sm={6}>
+            <Grid container spacing={2}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <TextField
                   fullWidth
                   size="small"
@@ -296,8 +296,8 @@ export default function CrmEditUserModal({
                   value={editedUser.phone}
                   onChange={(e) => handleFieldChange("phone", e.target.value)}
                 />
-              </Grid2>
-              <Grid2 xs={12} sm={6}>
+              </Grid>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <TextField
                   fullWidth
                   size="small"
@@ -305,8 +305,8 @@ export default function CrmEditUserModal({
                   value={editedUser.cell}
                   onChange={(e) => handleFieldChange("cell", e.target.value)}
                 />
-              </Grid2>
-            </Grid2>
+              </Grid>
+            </Grid>
           </Box>
 
           {/* Address Information */}
