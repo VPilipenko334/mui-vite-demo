@@ -209,9 +209,9 @@ export default function Customers() {
       </Stack>
 
       {/* Stats Cards row */}
-      <Grid2 container spacing={2} sx={{ mb: 3 }}>
+      <Grid container spacing={2} sx={{ mb: 3 }}>
         {statCardsData.map((card, index) => (
-          <Grid2 key={index} xs={12} sm={6} lg={3}>
+          <Grid key={index} size={{ xs: 12, sm: 6, lg: 3 }}>
             <CrmStatCard
               title={card.title}
               value={card.value}
@@ -220,19 +220,19 @@ export default function Customers() {
               trendValue={card.trendValue}
               data={card.data}
             />
-          </Grid2>
+          </Grid>
         ))}
-      </Grid2>
+      </Grid>
 
       {/* Customers Table */}
-      <Grid2 container spacing={2}>
-        <Grid2 xs={12}>
+      <Grid container spacing={2}>
+        <Grid size={{ xs: 12 }}>
           <CrmCustomersTable
             onEditUser={handleEditUser}
             key={refreshTrigger} // Force re-render when refreshTrigger changes
           />
-        </Grid2>
-      </Grid2>
+        </Grid>
+      </Grid>
 
       {/* Edit User Modal */}
       <CrmEditUserModal
