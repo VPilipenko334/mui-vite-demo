@@ -5,7 +5,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import Grid from "@mui/material/Grid";
+import Grid2 from "@mui/material/Grid2";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
@@ -214,8 +214,8 @@ export default function CrmEditUserModal({
             <Typography variant="subtitle1" sx={{ mb: 2, fontWeight: 600 }}>
               Personal Information
             </Typography>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={2}>
+            <Grid2 container spacing={2}>
+              <Grid2 xs={12} sm={2}>
                 <FormControl fullWidth size="small">
                   <InputLabel>Title</InputLabel>
                   <Select
@@ -231,8 +231,8 @@ export default function CrmEditUserModal({
                     <MenuItem value="Dr">Dr</MenuItem>
                   </Select>
                 </FormControl>
-              </Grid>
-              <Grid item xs={12} sm={5}>
+              </Grid2>
+              <Grid2 xs={12} sm={5}>
                 <TextField
                   fullWidth
                   size="small"
@@ -242,8 +242,8 @@ export default function CrmEditUserModal({
                     handleFieldChange("name.first", e.target.value)
                   }
                 />
-              </Grid>
-              <Grid item xs={12} sm={5}>
+              </Grid2>
+              <Grid2 xs={12} sm={5}>
                 <TextField
                   fullWidth
                   size="small"
@@ -253,8 +253,8 @@ export default function CrmEditUserModal({
                     handleFieldChange("name.last", e.target.value)
                   }
                 />
-              </Grid>
-              <Grid item xs={12} sm={6}>
+              </Grid2>
+              <Grid2 xs={12} sm={6}>
                 <FormControl fullWidth size="small">
                   <InputLabel>Gender</InputLabel>
                   <Select
@@ -268,8 +268,8 @@ export default function CrmEditUserModal({
                     <MenuItem value="female">Female</MenuItem>
                   </Select>
                 </FormControl>
-              </Grid>
-              <Grid item xs={12} sm={6}>
+              </Grid2>
+              <Grid2 xs={12} sm={6}>
                 <TextField
                   fullWidth
                   size="small"
@@ -278,8 +278,8 @@ export default function CrmEditUserModal({
                   value={editedUser.email}
                   onChange={(e) => handleFieldChange("email", e.target.value)}
                 />
-              </Grid>
-            </Grid>
+              </Grid2>
+            </Grid2>
           </Box>
 
           {/* Contact Information */}
@@ -287,8 +287,8 @@ export default function CrmEditUserModal({
             <Typography variant="subtitle1" sx={{ mb: 2, fontWeight: 600 }}>
               Contact Information
             </Typography>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
+            <Grid2 container spacing={2}>
+              <Grid2 xs={12} sm={6}>
                 <TextField
                   fullWidth
                   size="small"
@@ -296,8 +296,8 @@ export default function CrmEditUserModal({
                   value={editedUser.phone}
                   onChange={(e) => handleFieldChange("phone", e.target.value)}
                 />
-              </Grid>
-              <Grid item xs={12} sm={6}>
+              </Grid2>
+              <Grid2 xs={12} sm={6}>
                 <TextField
                   fullWidth
                   size="small"
@@ -305,8 +305,8 @@ export default function CrmEditUserModal({
                   value={editedUser.cell}
                   onChange={(e) => handleFieldChange("cell", e.target.value)}
                 />
-              </Grid>
-            </Grid>
+              </Grid2>
+            </Grid2>
           </Box>
 
           {/* Address Information */}
@@ -314,8 +314,8 @@ export default function CrmEditUserModal({
             <Typography variant="subtitle1" sx={{ mb: 2, fontWeight: 600 }}>
               Address Information
             </Typography>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={3}>
+            <Grid2 container spacing={2}>
+              <Grid2 xs={12} sm={3}>
                 <TextField
                   fullWidth
                   size="small"
@@ -329,8 +329,8 @@ export default function CrmEditUserModal({
                     )
                   }
                 />
-              </Grid>
-              <Grid item xs={12} sm={9}>
+              </Grid2>
+              <Grid2 xs={12} sm={9}>
                 <TextField
                   fullWidth
                   size="small"
@@ -340,8 +340,8 @@ export default function CrmEditUserModal({
                     handleFieldChange("location.street.name", e.target.value)
                   }
                 />
-              </Grid>
-              <Grid item xs={12} sm={6}>
+              </Grid2>
+              <Grid2 xs={12} sm={6}>
                 <TextField
                   fullWidth
                   size="small"
@@ -351,8 +351,8 @@ export default function CrmEditUserModal({
                     handleFieldChange("location.city", e.target.value)
                   }
                 />
-              </Grid>
-              <Grid item xs={12} sm={6}>
+              </Grid2>
+              <Grid2 xs={12} sm={6}>
                 <TextField
                   fullWidth
                   size="small"
@@ -362,8 +362,8 @@ export default function CrmEditUserModal({
                     handleFieldChange("location.state", e.target.value)
                   }
                 />
-              </Grid>
-              <Grid item xs={12} sm={6}>
+              </Grid2>
+              <Grid2 xs={12} sm={6}>
                 <TextField
                   fullWidth
                   size="small"
@@ -373,8 +373,8 @@ export default function CrmEditUserModal({
                     handleFieldChange("location.country", e.target.value)
                   }
                 />
-              </Grid>
-              <Grid item xs={12} sm={6}>
+              </Grid2>
+              <Grid2 xs={12} sm={6}>
                 <TextField
                   fullWidth
                   size="small"
@@ -384,8 +384,8 @@ export default function CrmEditUserModal({
                     handleFieldChange("location.postcode", e.target.value)
                   }
                 />
-              </Grid>
-            </Grid>
+              </Grid2>
+            </Grid2>
           </Box>
         </Stack>
       </DialogContent>
