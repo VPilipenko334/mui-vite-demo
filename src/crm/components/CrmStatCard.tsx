@@ -73,31 +73,16 @@ export default function CrmStatCard({
           direction="column"
           sx={{ justifyContent: "space-between", flexGrow: "1", gap: 1 }}
         >
-          <Stack sx={{ justifyContent: "space-between" }}>
-            <Stack
-              direction="row"
-              sx={{ justifyContent: "space-between", alignItems: "center" }}
-            >
-              <Typography variant="h4" component="p" fontWeight="600">
-                {value}
-              </Typography>
-              <Chip
-                size="small"
-                color={color}
-                label={trendValue}
-                icon={trendIcon}
-                sx={{
-                  "& .MuiChip-icon": {
-                    marginLeft: "5px",
-                    marginRight: "-4px",
-                  },
-                }}
-              />
-            </Stack>
-            <Typography variant="caption" sx={{ color: "text.secondary" }}>
-              {interval}
-            </Typography>
-          </Stack>
+          <div
+            style={{
+              color: "rgb(71, 83, 107)",
+              fontSize: "12px",
+              fontWeight: "400",
+              lineHeight: "20px",
+            }}
+          >
+            {interval}
+          </div>
           <Typography
             component="h3"
             variant="subtitle2"
@@ -106,7 +91,7 @@ export default function CrmStatCard({
           >
             {title}
           </Typography>
-          <Box sx={{ width: "100%", height: 50 }}>
+          <Box sx={{ width: "100%", height: 50, position: "relative" }}>
             <SparkLineChart
               color={chartColor}
               data={data}
@@ -131,6 +116,34 @@ export default function CrmStatCard({
                 id={`area-gradient-${title.replace(/\s+/g, "-").toLowerCase()}`}
               />
             </SparkLineChart>
+            <Box
+              sx={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                p: 1,
+              }}
+            >
+              <Typography variant="h4" component="p" fontWeight="600">
+                {value}
+              </Typography>
+              <Chip
+                size="small"
+                color={color}
+                label={trendValue}
+                icon={trendIcon}
+                sx={{
+                  "& .MuiChip-icon": {
+                    marginLeft: "5px",
+                    marginRight: "-4px",
+                  },
+                }}
+              />
+            </Box>
           </Box>
         </Stack>
       </CardContent>
