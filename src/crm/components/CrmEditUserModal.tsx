@@ -215,7 +215,7 @@ export default function CrmEditUserModal({
               Personal Information
             </Typography>
             <Grid container spacing={2}>
-              <Grid size={{ xs: 12, sm: 2 }}>
+              <Grid item xs={12} sm={2}>
                 <FormControl fullWidth size="small">
                   <InputLabel>Title</InputLabel>
                   <Select
@@ -232,7 +232,7 @@ export default function CrmEditUserModal({
                   </Select>
                 </FormControl>
               </Grid>
-              <Grid size={{ xs: 12, sm: 5 }}>
+              <Grid item xs={12} sm={5}>
                 <TextField
                   fullWidth
                   size="small"
@@ -243,7 +243,7 @@ export default function CrmEditUserModal({
                   }
                 />
               </Grid>
-              <Grid size={{ xs: 12, sm: 5 }}>
+              <Grid item xs={12} sm={5}>
                 <TextField
                   fullWidth
                   size="small"
@@ -254,7 +254,7 @@ export default function CrmEditUserModal({
                   }
                 />
               </Grid>
-              <Grid size={{ xs: 12, sm: 6 }}>
+              <Grid item xs={12} sm={6}>
                 <FormControl fullWidth size="small">
                   <InputLabel>Gender</InputLabel>
                   <Select
@@ -269,7 +269,7 @@ export default function CrmEditUserModal({
                   </Select>
                 </FormControl>
               </Grid>
-              <Grid size={{ xs: 12, sm: 6 }}>
+              <Grid item xs={12} sm={6}>
                 <TextField
                   fullWidth
                   size="small"
@@ -288,7 +288,7 @@ export default function CrmEditUserModal({
               Contact Information
             </Typography>
             <Grid container spacing={2}>
-              <Grid size={{ xs: 12, sm: 6 }}>
+              <Grid item xs={12} sm={6}>
                 <TextField
                   fullWidth
                   size="small"
@@ -297,7 +297,7 @@ export default function CrmEditUserModal({
                   onChange={(e) => handleFieldChange("phone", e.target.value)}
                 />
               </Grid>
-              <Grid size={{ xs: 12, sm: 6 }}>
+              <Grid item xs={12} sm={6}>
                 <TextField
                   fullWidth
                   size="small"
@@ -315,7 +315,7 @@ export default function CrmEditUserModal({
               Address Information
             </Typography>
             <Grid container spacing={2}>
-              <Grid size={{ xs: 12, sm: 3 }}>
+              <Grid item xs={12} sm={3}>
                 <TextField
                   fullWidth
                   size="small"
@@ -330,7 +330,7 @@ export default function CrmEditUserModal({
                   }
                 />
               </Grid>
-              <Grid size={{ xs: 12, sm: 9 }}>
+              <Grid item xs={12} sm={9}>
                 <TextField
                   fullWidth
                   size="small"
@@ -341,7 +341,7 @@ export default function CrmEditUserModal({
                   }
                 />
               </Grid>
-              <Grid size={{ xs: 12, sm: 6 }}>
+              <Grid item xs={12} sm={6}>
                 <TextField
                   fullWidth
                   size="small"
@@ -352,7 +352,7 @@ export default function CrmEditUserModal({
                   }
                 />
               </Grid>
-              <Grid size={{ xs: 12, sm: 6 }}>
+              <Grid item xs={12} sm={6}>
                 <TextField
                   fullWidth
                   size="small"
@@ -363,7 +363,7 @@ export default function CrmEditUserModal({
                   }
                 />
               </Grid>
-              <Grid size={{ xs: 12, sm: 6 }}>
+              <Grid item xs={12} sm={6}>
                 <TextField
                   fullWidth
                   size="small"
@@ -374,7 +374,7 @@ export default function CrmEditUserModal({
                   }
                 />
               </Grid>
-              <Grid size={{ xs: 12, sm: 6 }}>
+              <Grid item xs={12} sm={6}>
                 <TextField
                   fullWidth
                   size="small"
