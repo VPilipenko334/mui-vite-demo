@@ -252,7 +252,7 @@ export default function CrmCustomersTable({
                           </Box>
                         </TableCell>
                         <TableCell>
-                          <Typography variant="body2">{user.email}</Typography>
+                          <p>{user.email}</p>
                         </TableCell>
                         <TableCell>
                           <Typography variant="body2">{user.phone}</Typography>
