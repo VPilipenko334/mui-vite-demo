@@ -314,8 +314,8 @@ export default function CrmEditUserModal({
             <Typography variant="subtitle1" sx={{ mb: 2, fontWeight: 600 }}>
               Address Information
             </Typography>
-            <Grid2 container spacing={2}>
-              <Grid2 xs={12} sm={3}>
+            <Grid container spacing={2}>
+              <Grid size={{ xs: 12, sm: 3 }}>
                 <TextField
                   fullWidth
                   size="small"
@@ -329,8 +329,8 @@ export default function CrmEditUserModal({
                     )
                   }
                 />
-              </Grid2>
-              <Grid2 xs={12} sm={9}>
+              </Grid>
+              <Grid size={{ xs: 12, sm: 9 }}>
                 <TextField
                   fullWidth
                   size="small"
@@ -340,8 +340,8 @@ export default function CrmEditUserModal({
                     handleFieldChange("location.street.name", e.target.value)
                   }
                 />
-              </Grid2>
-              <Grid2 xs={12} sm={6}>
+              </Grid>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <TextField
                   fullWidth
                   size="small"
@@ -351,8 +351,8 @@ export default function CrmEditUserModal({
                     handleFieldChange("location.city", e.target.value)
                   }
                 />
-              </Grid2>
-              <Grid2 xs={12} sm={6}>
+              </Grid>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <TextField
                   fullWidth
                   size="small"
@@ -362,8 +362,8 @@ export default function CrmEditUserModal({
                     handleFieldChange("location.state", e.target.value)
                   }
                 />
-              </Grid2>
-              <Grid2 xs={12} sm={6}>
+              </Grid>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <TextField
                   fullWidth
                   size="small"
@@ -373,8 +373,8 @@ export default function CrmEditUserModal({
                     handleFieldChange("location.country", e.target.value)
                   }
                 />
-              </Grid2>
-              <Grid2 xs={12} sm={6}>
+              </Grid>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <TextField
                   fullWidth
                   size="small"
@@ -384,8 +384,8 @@ export default function CrmEditUserModal({
                     handleFieldChange("location.postcode", e.target.value)
                   }
                 />
-              </Grid2>
-            </Grid2>
+              </Grid>
+            </Grid>
           </Box>
         </Stack>
       </DialogContent>
