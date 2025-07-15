@@ -69,14 +69,6 @@ export default function CrmStatCard({
   return (
     <Card variant="outlined" sx={{ height: "100%" }}>
       <CardContent>
-        <Typography
-          component="h3"
-          variant="subtitle2"
-          color="text.secondary"
-          gutterBottom
-        >
-          {title}
-        </Typography>
         <Stack
           direction="column"
           sx={{ justifyContent: "space-between", flexGrow: "1", gap: 1 }}
@@ -106,6 +98,14 @@ export default function CrmStatCard({
               {interval}
             </Typography>
           </Stack>
+          <Typography
+            component="h3"
+            variant="subtitle2"
+            color="text.secondary"
+            gutterBottom
+          >
+            {title}
+          </Typography>
           <Box sx={{ width: "100%", height: 50 }}>
             <SparkLineChart
               color={chartColor}
