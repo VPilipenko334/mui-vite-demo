@@ -5,7 +5,6 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import Grid from "@mui/material/Grid";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
@@ -182,10 +181,10 @@ export default function CrmEditUserModal({
     <Dialog
       open={open}
       onClose={handleCancel}
-      maxWidth="md"
+      maxWidth="sm"
       fullWidth
       PaperProps={{
-        sx: { minHeight: "70vh" },
+        sx: { minHeight: "50vh" },
       }}
     >
       <DialogTitle>
@@ -206,187 +205,147 @@ export default function CrmEditUserModal({
       </DialogTitle>
 
       <DialogContent dividers>
-        <Stack spacing={3}>
+        <Stack spacing={2}>
           {error && <Alert severity="error">{error}</Alert>}
 
-          {/* Personal Information */}
-          <Box>
-            <Typography variant="subtitle1" sx={{ mb: 2, fontWeight: 600 }}>
-              Personal Information
-            </Typography>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={2}>
-                <FormControl fullWidth size="small">
-                  <InputLabel>Title</InputLabel>
-                  <Select
-                    value={editedUser.name.title}
-                    label="Title"
-                    onChange={(e) =>
-                      handleFieldChange("name.title", e.target.value)
-                    }
-                  >
-                    <MenuItem value="Mr">Mr</MenuItem>
-                    <MenuItem value="Ms">Ms</MenuItem>
-                    <MenuItem value="Mrs">Mrs</MenuItem>
-                    <MenuItem value="Dr">Dr</MenuItem>
-                  </Select>
-                </FormControl>
-              </Grid>
-              <Grid item xs={12} sm={5}>
-                <TextField
-                  fullWidth
-                  size="small"
-                  label="First Name"
-                  value={editedUser.name.first}
-                  onChange={(e) =>
-                    handleFieldChange("name.first", e.target.value)
-                  }
-                />
-              </Grid>
-              <Grid item xs={12} sm={5}>
-                <TextField
-                  fullWidth
-                  size="small"
-                  label="Last Name"
-                  value={editedUser.name.last}
-                  onChange={(e) =>
-                    handleFieldChange("name.last", e.target.value)
-                  }
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <FormControl fullWidth size="small">
-                  <InputLabel>Gender</InputLabel>
-                  <Select
-                    value={editedUser.gender}
-                    label="Gender"
-                    onChange={(e) =>
-                      handleFieldChange("gender", e.target.value)
-                    }
-                  >
-                    <MenuItem value="male">Male</MenuItem>
-                    <MenuItem value="female">Female</MenuItem>
-                  </Select>
-                </FormControl>
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  fullWidth
-                  size="small"
-                  label="Email"
-                  type="email"
-                  value={editedUser.email}
-                  onChange={(e) => handleFieldChange("email", e.target.value)}
-                />
-              </Grid>
-            </Grid>
-          </Box>
+          {/* Basic Information */}
+          <Stack direction="row" spacing={2}>
+            <FormControl size="small" sx={{ minWidth: 80 }}>
+              <InputLabel>Title</InputLabel>
+              <Select
+                value={editedUser.name.title}
+                label="Title"
+                onChange={(e) =>
+                  handleFieldChange("name.title", e.target.value)
+                }
+              >
+                <MenuItem value="Mr">Mr</MenuItem>
+                <MenuItem value="Ms">Ms</MenuItem>
+                <MenuItem value="Mrs">Mrs</MenuItem>
+                <MenuItem value="Dr">Dr</MenuItem>
+              </Select>
+            </FormControl>
+            <TextField
+              fullWidth
+              size="small"
+              label="First Name"
+              value={editedUser.name.first}
+              onChange={(e) => handleFieldChange("name.first", e.target.value)}
+            />
+            <TextField
+              fullWidth
+              size="small"
+              label="Last Name"
+              value={editedUser.name.last}
+              onChange={(e) => handleFieldChange("name.last", e.target.value)}
+            />
+          </Stack>
 
-          {/* Contact Information */}
-          <Box>
-            <Typography variant="subtitle1" sx={{ mb: 2, fontWeight: 600 }}>
-              Contact Information
-            </Typography>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  fullWidth
-                  size="small"
-                  label="Phone"
-                  value={editedUser.phone}
-                  onChange={(e) => handleFieldChange("phone", e.target.value)}
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  fullWidth
-                  size="small"
-                  label="Cell Phone"
-                  value={editedUser.cell}
-                  onChange={(e) => handleFieldChange("cell", e.target.value)}
-                />
-              </Grid>
-            </Grid>
-          </Box>
+          <Stack direction="row" spacing={2}>
+            <FormControl fullWidth size="small">
+              <InputLabel>Gender</InputLabel>
+              <Select
+                value={editedUser.gender}
+                label="Gender"
+                onChange={(e) => handleFieldChange("gender", e.target.value)}
+              >
+                <MenuItem value="male">Male</MenuItem>
+                <MenuItem value="female">Female</MenuItem>
+              </Select>
+            </FormControl>
+            <TextField
+              fullWidth
+              size="small"
+              label="Email"
+              type="email"
+              value={editedUser.email}
+              onChange={(e) => handleFieldChange("email", e.target.value)}
+            />
+          </Stack>
 
-          {/* Address Information */}
-          <Box>
-            <Typography variant="subtitle1" sx={{ mb: 2, fontWeight: 600 }}>
-              Address Information
-            </Typography>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={3}>
-                <TextField
-                  fullWidth
-                  size="small"
-                  label="Street Number"
-                  type="number"
-                  value={editedUser.location.street.number}
-                  onChange={(e) =>
-                    handleNumberFieldChange(
-                      "location.street.number",
-                      e.target.value,
-                    )
-                  }
-                />
-              </Grid>
-              <Grid item xs={12} sm={9}>
-                <TextField
-                  fullWidth
-                  size="small"
-                  label="Street Name"
-                  value={editedUser.location.street.name}
-                  onChange={(e) =>
-                    handleFieldChange("location.street.name", e.target.value)
-                  }
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  fullWidth
-                  size="small"
-                  label="City"
-                  value={editedUser.location.city}
-                  onChange={(e) =>
-                    handleFieldChange("location.city", e.target.value)
-                  }
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  fullWidth
-                  size="small"
-                  label="State"
-                  value={editedUser.location.state}
-                  onChange={(e) =>
-                    handleFieldChange("location.state", e.target.value)
-                  }
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  fullWidth
-                  size="small"
-                  label="Country"
-                  value={editedUser.location.country}
-                  onChange={(e) =>
-                    handleFieldChange("location.country", e.target.value)
-                  }
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  fullWidth
-                  size="small"
-                  label="Postcode"
-                  value={editedUser.location.postcode}
-                  onChange={(e) =>
-                    handleFieldChange("location.postcode", e.target.value)
-                  }
-                />
-              </Grid>
-            </Grid>
-          </Box>
+          <Stack direction="row" spacing={2}>
+            <TextField
+              fullWidth
+              size="small"
+              label="Phone"
+              value={editedUser.phone}
+              onChange={(e) => handleFieldChange("phone", e.target.value)}
+            />
+            <TextField
+              fullWidth
+              size="small"
+              label="Cell Phone"
+              value={editedUser.cell}
+              onChange={(e) => handleFieldChange("cell", e.target.value)}
+            />
+          </Stack>
+
+          <Stack direction="row" spacing={2}>
+            <TextField
+              size="small"
+              label="Street #"
+              type="number"
+              value={editedUser.location.street.number}
+              onChange={(e) =>
+                handleNumberFieldChange(
+                  "location.street.number",
+                  e.target.value,
+                )
+              }
+              sx={{ maxWidth: 100 }}
+            />
+            <TextField
+              fullWidth
+              size="small"
+              label="Street Name"
+              value={editedUser.location.street.name}
+              onChange={(e) =>
+                handleFieldChange("location.street.name", e.target.value)
+              }
+            />
+          </Stack>
+
+          <Stack direction="row" spacing={2}>
+            <TextField
+              fullWidth
+              size="small"
+              label="City"
+              value={editedUser.location.city}
+              onChange={(e) =>
+                handleFieldChange("location.city", e.target.value)
+              }
+            />
+            <TextField
+              fullWidth
+              size="small"
+              label="State"
+              value={editedUser.location.state}
+              onChange={(e) =>
+                handleFieldChange("location.state", e.target.value)
+              }
+            />
+          </Stack>
+
+          <Stack direction="row" spacing={2}>
+            <TextField
+              fullWidth
+              size="small"
+              label="Country"
+              value={editedUser.location.country}
+              onChange={(e) =>
+                handleFieldChange("location.country", e.target.value)
+              }
+            />
+            <TextField
+              fullWidth
+              size="small"
+              label="Postcode"
+              value={editedUser.location.postcode}
+              onChange={(e) =>
+                handleFieldChange("location.postcode", e.target.value)
+              }
+            />
+          </Stack>
         </Stack>
       </DialogContent>
 
