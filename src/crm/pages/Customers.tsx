@@ -211,7 +211,7 @@ export default function Customers() {
       {/* Stats Cards row */}
       <Grid container spacing={2} sx={{ mb: 3 }}>
         {statCardsData.map((card, index) => (
-          <Grid key={index} size={{ xs: 12, sm: 6, lg: 3 }}>
+          <Grid key={index} item xs={12} sm={6} lg={3}>
             <CrmStatCard
               title={card.title}
               value={card.value}
@@ -226,7 +226,7 @@ export default function Customers() {
 
       {/* Customers Table */}
       <Grid container spacing={2}>
-        <Grid size={{ xs: 12 }}>
+        <Grid item xs={12}>
           <CrmCustomersTable
             onEditUser={handleEditUser}
             key={refreshTrigger} // Force re-render when refreshTrigger changes
