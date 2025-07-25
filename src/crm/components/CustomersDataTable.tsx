@@ -172,7 +172,9 @@ export default function CustomersDataTable({ onEditCustomer, onAddCustomer }: Cu
       headerName: 'Phone',
       width: 150,
       renderCell: (params: GridRenderCellParams<User>) => (
-        <Typography variant="body2">{formatPhoneNumber(params.row.phone)}</Typography>
+        <Typography variant="body2">
+          {params.row?.phone ? formatPhoneNumber(params.row.phone) : 'N/A'}
+        </Typography>
       ),
     },
     {
