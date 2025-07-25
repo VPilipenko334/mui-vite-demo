@@ -164,7 +164,7 @@ export default function CustomersDataTable({ onEditCustomer, onAddCustomer }: Cu
       headerName: 'Email',
       width: 250,
       renderCell: (params: GridRenderCellParams<User>) => (
-        <Typography variant="body2">{params.row.email}</Typography>
+        <Typography variant="body2">{params.row?.email || 'N/A'}</Typography>
       ),
     },
     {
