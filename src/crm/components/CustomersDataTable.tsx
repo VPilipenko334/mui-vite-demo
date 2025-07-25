@@ -141,16 +141,16 @@ export default function CustomersDataTable({ onEditCustomer, onAddCustomer }: Cu
     },
     {
       field: 'name',
-      headerName: 'Name',
-      width: 200,
+      headerName: 'First Name',
+      width: 150,
       valueGetter: (params: GridValueGetterParams<User>) =>
-        params.row?.name ? `${params.row.name.first} ${params.row.name.last}` : '',
+        params.row?.name?.first || '',
       renderCell: (params: GridRenderCellParams<User>) => {
         if (!params.row?.name) return null;
         return (
           <Box>
             <Typography variant="body2" sx={{ fontWeight: 500 }}>
-              {params.row.name.title} {params.row.name.first} {params.row.name.last}
+              {params.row.name.title} {params.row.name.first}
             </Typography>
             <Typography variant="caption" color="text.secondary">
               @{params.row.login?.username || 'N/A'}
@@ -158,6 +158,18 @@ export default function CustomersDataTable({ onEditCustomer, onAddCustomer }: Cu
           </Box>
         );
       },
+    },
+    {
+      field: 'lastName',
+      headerName: 'Last Name',
+      width: 120,
+      valueGetter: (params: GridValueGetterParams<User>) =>
+        params.row?.name?.last || '',
+      renderCell: (params: GridRenderCellParams<User>) => (
+        <Typography variant="body2" sx={{ fontWeight: 500 }}>
+          {params.row?.name?.last || 'N/A'}
+        </Typography>
+      ),
     },
     {
       field: 'email',
