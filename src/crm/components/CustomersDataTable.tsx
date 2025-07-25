@@ -127,14 +127,17 @@ export default function CustomersDataTable({ onEditCustomer, onAddCustomer }: Cu
       sortable: false,
       filterable: false,
       disableColumnMenu: true,
-      renderCell: (params: GridRenderCellParams<User>) => (
-        <Avatar
-          src={params.row.picture?.thumbnail}
-          sx={{ width: 32, height: 32 }}
-        >
-          {getInitials(params.row.name)}
-        </Avatar>
-      ),
+      renderCell: (params: GridRenderCellParams<User>) => {
+        if (!params.row?.name) return null;
+        return (
+          <Avatar
+            src={params.row.picture?.thumbnail}
+            sx={{ width: 32, height: 32 }}
+          >
+            {getInitials(params.row.name)}
+          </Avatar>
+        );
+      },
     },
     {
       field: 'name',
