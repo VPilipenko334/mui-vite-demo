@@ -211,17 +211,22 @@ export default function CustomersDataTable({ onEditCustomer, onAddCustomer }: Cu
       field: 'registered',
       headerName: 'Customer Since',
       width: 150,
-      valueGetter: (params: GridValueGetterParams<User>) => 
-        new Date(params.row.registered.date).toLocaleDateString(),
-      renderCell: (params: GridRenderCellParams<User>) => (
-        <Typography variant="body2">
-          {new Date(params.row.registered.date).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
-          })}
-        </Typography>
-      ),
+      valueGetter: (params: GridValueGetterParams<User>) =>
+        params.row?.registered?.date ? new Date(params.row.registered.date).toLocaleDateString() : '',
+      renderCell: (params: GridRenderCellParams<User>) => {
+        if (!params.row?.registered?.date) {
+          return <Typography variant="body2">N/A</Typography>;
+        }
+        return (
+          <Typography variant="body2">
+            {new Date(params.row.registered.date).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric',
+            })}
+          </Typography>
+        );
+      },
     },
     {
       field: 'actions',
