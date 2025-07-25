@@ -233,20 +233,23 @@ export default function CustomersDataTable({ onEditCustomer, onAddCustomer }: Cu
       type: 'actions',
       headerName: 'Actions',
       width: 120,
-      getActions: (params) => [
-        <GridActionsCellItem
-          icon={<EditIcon />}
-          label="Edit"
-          onClick={() => onEditCustomer(params.row)}
-          color="primary"
-        />,
-        <GridActionsCellItem
-          icon={<DeleteIcon />}
-          label="Delete"
-          onClick={() => handleDeleteCustomer(params.row.login.uuid)}
-          color="error"
-        />,
-      ],
+      getActions: (params) => {
+        if (!params.row) return [];
+        return [
+          <GridActionsCellItem
+            icon={<EditIcon />}
+            label="Edit"
+            onClick={() => onEditCustomer(params.row)}
+            color="primary"
+          />,
+          <GridActionsCellItem
+            icon={<DeleteIcon />}
+            label="Delete"
+            onClick={() => handleDeleteCustomer(params.row.login?.uuid || '')}
+            color="error"
+          />,
+        ];
+      },
     },
   ];
 
