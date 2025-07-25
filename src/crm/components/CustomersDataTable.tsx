@@ -141,17 +141,20 @@ export default function CustomersDataTable({ onEditCustomer, onAddCustomer }: Cu
       headerName: 'Name',
       width: 200,
       valueGetter: (params: GridValueGetterParams<User>) =>
-        `${params.row.name.first} ${params.row.name.last}`,
-      renderCell: (params: GridRenderCellParams<User>) => (
-        <Box>
-          <Typography variant="body2" sx={{ fontWeight: 500 }}>
-            {params.row.name.title} {params.row.name.first} {params.row.name.last}
-          </Typography>
-          <Typography variant="caption" color="text.secondary">
-            @{params.row.login.username}
-          </Typography>
-        </Box>
-      ),
+        params.row?.name ? `${params.row.name.first} ${params.row.name.last}` : '',
+      renderCell: (params: GridRenderCellParams<User>) => {
+        if (!params.row?.name) return null;
+        return (
+          <Box>
+            <Typography variant="body2" sx={{ fontWeight: 500 }}>
+              {params.row.name.title} {params.row.name.first} {params.row.name.last}
+            </Typography>
+            <Typography variant="caption" color="text.secondary">
+              @{params.row.login?.username || 'N/A'}
+            </Typography>
+          </Box>
+        );
+      },
     },
     {
       field: 'email',
