@@ -181,9 +181,12 @@ export default function CustomersDataTable({ onEditCustomer, onAddCustomer }: Cu
       field: 'location',
       headerName: 'Location',
       width: 200,
-      valueGetter: (params: GridValueGetterParams<User>) => formatAddress(params.row.location),
+      valueGetter: (params: GridValueGetterParams<User>) =>
+        params.row?.location ? formatAddress(params.row.location) : '',
       renderCell: (params: GridRenderCellParams<User>) => (
-        <Typography variant="body2">{formatAddress(params.row.location)}</Typography>
+        <Typography variant="body2">
+          {params.row?.location ? formatAddress(params.row.location) : 'N/A'}
+        </Typography>
       ),
     },
     {
