@@ -193,14 +193,19 @@ export default function CustomersDataTable({ onEditCustomer, onAddCustomer }: Cu
       field: 'age',
       headerName: 'Age',
       width: 100,
-      renderCell: (params: GridRenderCellParams<User>) => (
-        <Chip
-          label={getAgeRange(params.row.dob.age)}
-          size="small"
-          color={getAgeRangeColor(params.row.dob.age)}
-          variant="outlined"
-        />
-      ),
+      renderCell: (params: GridRenderCellParams<User>) => {
+        if (!params.row?.dob?.age) {
+          return <Typography variant="body2">N/A</Typography>;
+        }
+        return (
+          <Chip
+            label={getAgeRange(params.row.dob.age)}
+            size="small"
+            color={getAgeRangeColor(params.row.dob.age)}
+            variant="outlined"
+          />
+        );
+      },
     },
     {
       field: 'registered',
